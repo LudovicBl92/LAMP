@@ -1,0 +1,15 @@
+---
+
+ - name: Change index.html by index.php in file /etc/apache2/mods-enabled/dir.conf
+   lineinfile:
+    path: /etc/apache2/mods-enabled/dir.conf
+    regexp: 'DirectoryIndex index.html'
+    line: 'DirectoryIndex index.php index.cgi index.pl index.html index.xhtml index.htm'
+    state: present
+
+ - name: Copy info.php file on remote host
+   copy:
+    src: /etc/ansible/roles/LAMP/PHP/files/info.php
+    dest: /var/www/public/vhost/
+   notify: 
+    - Restart Apache2

@@ -1,0 +1,19 @@
+---
+
+ - name: Create /var/www/public/vhost directory
+   file:
+    path: /var/www/public/vhost
+    state: directory
+
+ - name: Create virtual host
+   template: 
+    src: /etc/ansible/roles/LAMP/Apache/templates/site.j2
+    dest: /etc/apache2/sites-available/site.conf
+
+ - name: Activation of the host
+   command: a2ensite site
+
+ - name: desactivation of default host
+   command: a2dissite 000-default
+   notify:
+    - Restart Apache2

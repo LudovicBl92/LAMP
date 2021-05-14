@@ -1,0 +1,4 @@
+---
+# tasks file for Mysql
+- import_tasks: install-Mysql.yml
+- import_tasks: config-bdd.yml

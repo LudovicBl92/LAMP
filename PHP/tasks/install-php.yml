@@ -1,0 +1,6 @@
+---
+
+ - name: install latest version PHP and tools
+   apt:
+    name: ['php', 'libapache2-mod-php', 'php-mysql']
+    state: latest

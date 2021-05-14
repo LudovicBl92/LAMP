@@ -1,0 +1,11 @@
+---
+
+ - name: Update and upgrade host
+   apt:
+     update_cache: yes
+     upgrade: yes
+
+ - name: Install latest version Apache
+   apt:
+    name: apache2
+    state: latest
