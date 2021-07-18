@@ -1,13 +1,11 @@
 ---
 - hosts: group1
-  become: yes
 
   roles:
    - Apache
    - PHP
 
 - hosts: group2
-  become: yes
 
   roles:
    - Mysql

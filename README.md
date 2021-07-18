@@ -1,4 +1,7 @@
 # LAMP
+
+This playbook is functional on ubuntu 18.04
+
 I want to create a full automatically installation LAMP service.
 I have 3 different role:
  - Apache: for the web server
